@@ -2,63 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Video</title>
-    <meta name="description" content="Video - A-Frame">
+    <title>360 Video</title>
+    <meta name="description" content="360 Video — A-Frame">
     <script src="../../../dist/aframe-master.js"></script>
-    <script src="../../js/play-on-click.js"></script>
-    <script src="../../js/hide-on-play.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <video id="videoBunny" preload="auto"
-               src="https://cdn.aframe.io/videos/bunny.mp4"
-               width="160" height="90" autoplay loop="true"
-               crossOrigin="anonymous" muted></video>
-        <video id="videoFireworks" preload="auto"
-               src="https://cdn.aframe.io/videos/fireworks.mp4"
-               width="160" height="90" autoplay loop="true"
-               crossOrigin="anonymous" muted></video>
+        <video id="video" autoplay loop crossorigin="anonymous">
+          <source src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/"></source>
+        </video>
       </a-assets>
 
-      <!--
-      SOURCE
-      Title:  Big Buck Bunny
-      Author: Blender Institute
-      URL:    https://peach.blender.org/
-      -->
-      <a-entity material="shader: flat; src: #videoBunny"
-                geometry="primitive: plane; width: 160; height: 90;"
-                position="0 60 -250"
-                rotation="0 35 0"
-                play-on-click
-                visible="false">
-      </a-entity>
-
-      <!--
-      SOURCE
-      Title:  Fireworks
-      Author: Motion Digital
-      URL:    https://www.videvo.net/profile/motiondigital/
-      -->
-      <a-entity material="shader: flat; src: #videoFireworks"
-                geometry="primitive: plane; width: 160; height: 90"
-                position="0 -60 -200"
-                rotation="0 -35 0"
-                play-on-click
-                visible="false">
-      </a-entity>
-      <a-camera>
-        <a-entity
-          position="0 0 -1.5"
-          text="align: center;
-                width: 6;
-                wrapCount: 100;
-                color: black;
-                value: Click or tap to start video"
-          hide-on-play="#videoFireworks">
-        </a-entity>
-      </a-camera>
+      <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
     </a-scene>
   </body>
 </html>
